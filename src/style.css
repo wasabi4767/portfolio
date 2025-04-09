@@ -88,8 +88,30 @@ h1, h2, h3, blockquote {
 
   .field{
     display: flex;
+    gap: 10px;
     justify-content: space-around;
   }
+  
+  .image-box img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .image-box video {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  
+  .text-box {
+    flex: 1; 
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
 
   .nav {
     position: fixed;
