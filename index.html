@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/vite.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/portfolio/assets/index-vBCaHuIF.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Bp9C1Hlw.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-DL6l91Ug.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BrrxVyZP.css">
   </head>
   <body>
     <div id="app"></div>
@@ -28,29 +29,65 @@
         <p>I create games, illustrations, and 3DCG.</p>
       </blockquote>
 
-      <section id = "profile" style="scroll-margin-top: 100px;">
-        <h2>📜 Profile</h2>
-        <h3>🎓 Education</h3>
-        <p>
-          2019/4 Entered 青森県立八戸北高等学校 <br>
-          2022/3 Graduated 青森県立八戸北高等学校 <br>
-          2022/4 Entered 会津大学コンピュータ理工学部コンピュータ理工学科
-        </p>
-
-        <h3>📕 Languages (Years of experience)</h3>
-        <p>
-          C(3Y),C#(3Y),C++(2Y6M),HLSL(1Y),JavaScript(1Y),TypeScript(3M)
-        </p>
-
-        <h3>🛠 Tool (Years of experience)</h3>
-        <p>
-          Unity(3Y11M),Blender(2Y),ibisPaint(6Y)
-        </p>
-
+      <section id="profile" class="profile-section" style="scroll-margin-top: 100px;">
+        <h2 class = "title-section">📜 Profile</h2>
+        
+        <!-- Education -->
+        <div class="profile-card">
+          <h3>🎓 Education</h3>
+          <p>
+            2019/4 Entered 青森県立八戸北高等学校 <br>
+            2022/3 Graduated 青森県立八戸北高等学校 <br>
+            2022/4 Entered 会津大学コンピュータ理工学部コンピュータ理工学科
+          </p>
+        </div>
+      
+        <!-- Languages -->
+        <div class="languages-section">
+          <h3>📕 Languages (Years of experience)</h3>
+          <div class="language-cards">
+            <div class="language-card">
+              <i class="devicon-c-plain"></i>
+              <p>C (3Y)</p>
+            </div>
+            <div class="language-card">
+              <i class="devicon-csharp-plain"></i>
+              <p>C# (3Y)</p>
+            </div>
+            <div class="language-card">
+              <i class="devicon-cplusplus-plain"></i>
+              <p>C++ (2Y6M)</p>
+            </div>
+            <div class="language-card">
+              <i class="devicon-javascript-plain"></i>
+              <p>JavaScript (1Y)</p>
+            </div>
+            <div class="language-card">
+              <i class="devicon-hlsl-plain"></i>
+              <p>HLSL (1Y)</p>
+            </div>
+            <div class="language-card">
+              <i class="devicon-typescript-plain"></i>
+              <p>TypeScript (2M)</p>
+            </div>
+            <div class="language-card">
+              <i class="devicon-python-plain"></i>
+              <p>Python (2M)</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Tools -->
+        <div class="profile-card">
+          <h3>🛠 Tools (Years of experience)</h3>
+          <p>
+            Unity (3Y11M), Blender (2Y), ibisPaint (6Y)
+          </p>
+        </div>
       </section>
 
       <section id = "works" class="light" style="scroll-margin-top: 100px;">
-        <h2>🎮 Projects</h2>
+        <h2 class = "title-section">🎮 Projects</h2>
 
         <div class = "field">
           <div class="image-box">
@@ -142,13 +179,9 @@
 
       </section>
 
-      <blockquote>
-        
-      </blockquote>
-
 
       <section class="left">
-        <h2>🖼️ Illustrations</h2>
+        <h2 class = "title-section">🖼️ Illustrations</h2>
 
         <div class="gallery">
           <img src="illust1.png" alt="Illust 1">
@@ -160,19 +193,19 @@
       </section>
 
       <section>
-        <h2>💎 3DCG works</h2>
+        <h2 class = "title-section">💎 3DCG works</h2>
 
-  <div class="gallery">
-    <img src="window.png">
-    <img src="lantern.png">
-    <video src="spiral_animation.mp4" controls muted></video>
-    <img src="katana.png">
-  </div>
+          <div class="gallery">
+            <img src="window.png">
+            <img src="lantern.png">
+            <video src="spiral_animation.mp4" controls muted></video>
+            <img src="katana.png">
+          </div>
 
       </section>
 
       <section id="contact" class="left" style="scroll-margin-top: 100px;">
-        <h2>✉ Contact</h2>
+        <h2 class = "title-section">✉ Contact</h2>
       
         <div class="contact-card">
           <div class="card">
