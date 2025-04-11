@@ -17,10 +17,20 @@ camera.position.setZ(30);
 camera.position.setX(-3);
 
 renderer.render(scene, camera);
-const geometry = new THREE.TorusGeometry( 10, 3, 16, 100)
-const material = new THREE.MeshStandardMaterial({ color: 0xFF6347});
+const geometry = new THREE.TorusKnotGeometry( 12, 1.7, 300, 20, 2, 3)
+const material = new THREE.MeshStandardMaterial({ 
+  color: 0xff5024,
+  //wireframe: true,
+  clearcoat: 1.0,
+  clearcoatRoughness: 0.1,
+  metalness: 0.9,
+  roughness: 0.5,
+  reflectivity: 1.0,
+});
 const torus = new THREE.Mesh(geometry, material);
 scene.add(torus)
+torus.position.z = -4.5
+
 
 const pointLight = new THREE.PointLight(0xffffff,120);
 pointLight.position.set(0,0,0)
