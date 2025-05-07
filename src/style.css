@@ -45,28 +45,181 @@ main {
   grid-template-columns: repeat(12, 1fr);
 }
 
-h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
-  font-weight: 700;
-  font-style: normal;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', monospace;
 }
-  header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 1.7rem;
-    padding: 2rem;
-    margin-bottom: var(--spacing);
-    border-radius: 10px;
-  }
+
+header p {
+  font-size: 25px;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  font-size: 2rem;
+  color: #0ff;
+  z-index: 2000;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.menu-toggle:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 1500;
+  background: #0a0a0a59;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+}
+
+
+.menu-panel.active {
+  transform: translateY(0);
+}
+
+.menu-item {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 0, 150, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 70% 40%, rgba(0, 200, 255, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 60% 80%, rgba(255, 255, 0, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 150, 0.4) 0%, transparent 60%),
+    #111; /* base color */
+  background-blend-mode: screen;
+  transition: transform 0.3s ease;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+
+.menu-item:nth-child(1) {
+  background: radial-gradient(circle at 30% 30%, #ff4e50, #f9d423, #ff6a00);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.menu-item:nth-child(2) {
+  background: radial-gradient(circle at 70% 40%, #00c3ff, #3a7bd5, #2b5876);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.menu-item:nth-child(3) {
+  background: radial-gradient(circle at 70% 60%, #7f00ff, #e100ff, #3f2b96);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+
+
+.menu-item:hover {
+  background: rgba(0, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+
+header {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(0, 0, 0, 0.548));
+  grid-column: 2 / span 5;
+  font-size: 1.7rem;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.08), 0 0 24px rgba(0, 255, 255, 0.03);
+  color: #eee;
+  position: relative;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .05em;
+  border-right: .15em solid #0ff;
+  animation:
+    typing 3s steps(30, end) forwards,
+    blink-caret 0.75s step-end 3s 4,
+    cursor-hide 0s linear 6s forwards;
+}
+
+header h1 {
+  white-space: normal;
+  width: 100%;
+  max-width: 100%;  
+  overflow: visible;   
+  margin-bottom: 1.5rem;
+
+}
+
+/* タイピングアニメーション */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* カーソルの点滅 */
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #0ff }
+}
+
+/* 最後にカーソルを非表示にする */
+@keyframes cursor-hide {
+  to { border-right: none; }
+}
+
+
+
 
   section {
     grid-column: 2 / 8;
+    padding: 1rem;
+    background: linear-gradient(145deg, rgba(30,30,40,0.95), rgba(0, 0, 0, 0.548));
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 
+      0 0 8px rgba(0, 255, 255, 0.15), 
+      0 0 30px rgba(0, 255, 255, 0.05) inset;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    border-radius: 10px;
+    color: #eee;
+  }
+  
+
+  
+
+  #works {
+    grid-column: 2 / 12; /* セクションの幅を広げて中央に配置 */
     padding: 1rem;
     background: var(--dark-bg);
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央寄せ */
   }
 
   blockquote {
@@ -74,24 +227,55 @@ h1, h2, h3, blockquote {
     padding: 0;
     grid-column: 2 / span 9;
     margin-bottom: var(--spacing);
+    position: relative;
+    
+  }
+  
+  blockquote p {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: #0ff;
+    background: rgba(10, 10, 20, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow:
+      0 0 12px rgba(0, 255, 255, 0.15),
+      0 0 30px rgba(0, 255, 255, 0.05) inset;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
   }
 
-  blockquote p {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.8);
-    font-size: 3rem;
-    display: inline;
-    line-height: 1;
-    border-radius: 10px;
+  .neon-name {
+    color: #0ff;
+  font-weight: bold;
+  text-shadow:
+    0 0 20px #0ff;
+  padding-bottom: 4px;
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
   }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  
 
   .profile-section {
     padding: 80px 20px;
     text-align: center;
   }
+
+  .profile-section h2{
+    font-size: 3rem;
+  }
   
   .title-section {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
     color: #0ff;
     text-align: center;
@@ -130,7 +314,7 @@ h1, h2, h3, blockquote {
   }
   
   .icon-card p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #aaa;
     margin-top: 10px;
   }
@@ -172,6 +356,125 @@ h1, h2, h3, blockquote {
     gap: 40px;
     margin-top: 40px;
   }
+
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* ← よりワイドに */
+    height: 600px;     /* ← 高さを追加 */
+    margin: 0 auto 80px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
+  }
+  
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 全面表示＆トリミング */
+    border-radius: 20px;
+  }
+  
+  
+  .slide-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 2rem;
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    backdrop-filter: blur(6px);
+  }
+  
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    transition: background 0.3s;
+  }
+  .carousel-btn:hover {
+    background: rgba(0, 255, 255, 0.6);
+  }
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  
+
+  .project-card {
+    background-color: rgba(20, 20, 20, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+    margin: 40px auto;
+    max-width: 800px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4); /* ホバー時にシャドウを強調 */
+  }
+  
+  .project-media {
+    overflow: hidden; /* シャドウと画像の端が干渉しないように調整 */
+    border-radius: 16px;
+  }
+  
+  .project-media video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+  }
+  
+  .project-info {
+    padding: 1.2rem 1.5rem;
+    color: #eee;
+  }
+  
+  .project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #0ff;
+  }
+  
+  .project-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  
   
   .card {
     background-color: #222;
