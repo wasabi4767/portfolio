@@ -5,6 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/portfolio/vite.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       section.fade-in {
@@ -19,18 +21,26 @@
       }
     </style>
     <title>Vite App</title>
-    <script type="module" crossorigin src="/portfolio/assets/index-CD-7EprQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Dqo22yya.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-BO-LdQbf.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Cg9s1kFd.css">
   </head>
   <body>
     <div id="app"></div>
-    <nav class="nav-bar">
-      <a href="#profile" class="nav-btn">Profile</a>
-      <a href="#works" class="nav-btn">Works</a>
-      <a href="#contact" class="nav-btn">Contact</a>
-    </nav>
+    
 
     <canvas id = "bg"></canvas>
+
+    <!-- メニューアイコン -->
+    <div id="menu-toggle" class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- メニュー画面 -->
+    <div id="menu-panel" class="menu-panel">
+      <div class="menu-item" data-target="#profile">Profile</div>
+      <div class="menu-item" data-target="#works">Works</div>
+      <div class="menu-item" data-target="#contact">Contact</div>
+    </div>
 
     <main>
       <header>
