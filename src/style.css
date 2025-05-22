@@ -437,13 +437,17 @@ header h1 {
     margin: 40px auto;
     max-width: 800px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-origin: center center;
   }
   
+  
   .project-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4); /* ホバー時にシャドウを強調 */
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(0, 255, 255, 0.5);
+    z-index: 10;
   }
+  
   
   .project-media {
     overflow: hidden; /* シャドウと画像の端が干渉しないように調整 */
@@ -460,7 +464,79 @@ header h1 {
   .project-info {
     padding: 1.2rem 1.5rem;
     color: #eee;
+    transition: transform 0.4s ease, color 0.3s ease;
   }
+  
+  .project-card:hover .project-info {
+    transform: translateY(5px);
+    color: #fff;
+  }
+
+  .project-card {
+    position: relative;
+    overflow: visible; /* 浮かせるために必要 */
+  }
+  
+  /* 詳細表示のベース */
+  /* 基本の浮かせパネル（右表示） */
+  .floating-details {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    min-width: 300px;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid #0ff;
+    border-radius: 12px;
+    padding: 1rem;
+    color: #ccc;
+    font-size: 0.95rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 50;
+    white-space: normal;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+  
+  /* 右側のカードは左に展開（画面端対策） */
+  .project-card.show-right .floating-details {
+    left: calc(100% + 20px); /* 左に展開 */
+  }
+  
+  /* 左側のカードは右に展開 */
+  .project-card.show-left .floating-details {
+    right: calc(100% + 20px); /* 右に展開 */
+  }
+  
+  .project-card:hover .floating-details {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+
+  
+.floating-details img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.project-video {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 1rem;
+  border-radius: 8px; /* 任意：角丸にしたい場合 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 任意：少し浮かせたい時 */
+}
+
+  
+  
   
   .project-info h3 {
     font-size: 1.8rem;
@@ -473,6 +549,19 @@ header h1 {
     line-height: 1.6;
     color: #ccc;
   }
+  
+  .project-media video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  
+  .project-card:hover .project-media video {
+    transform: scale(1.02);
+  }
+
   
   
   
