@@ -642,6 +642,10 @@ header h1 {
     gap: 20px;
     padding: 20px 0;
   }
+
+
+  
+  
   
   .gallery img,
   .gallery video {
@@ -653,9 +657,12 @@ header h1 {
     transition: transform 0.3s ease;
   }
   
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
+.gallery img:hover,
+.gallery video:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0, 255, 255, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
   
   
 
