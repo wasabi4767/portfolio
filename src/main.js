@@ -96,7 +96,7 @@ const bgMaterial = new THREE.ShaderMaterial({
     varying vec2 vUv;
 
     void main() {
-      // 色に時間による変化を追加（サイバー風グラデーション）
+      // 色に時間による変化を追加
       float pulse = sin(time + vUv.x * 10.0) * 0.1;
       vec3 color = vec3(
         0.15 + 0.2 * sin(vUv.x * 10.0 + time),   // R

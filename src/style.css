@@ -7,6 +7,14 @@ body {
   padding: 0;
 }
 
+ strong {
+   color: #00ffff; /* 文字色（例：ネオンシアン） */
+   padding: 2px 4px;
+   border-radius: 4px;
+   text-shadow: 0 0 8px #00ffff;
+ }
+
+
 canvas {
   position: fixed;
   top: 0;
@@ -273,6 +281,11 @@ header h1 {
   .profile-section h2{
     font-size: 3rem;
   }
+
+.Chronology {
+  text-align: left;
+  padding-left: 11rem;
+}
   
   .title-section {
     font-size: 2.5rem;
@@ -361,8 +374,8 @@ header h1 {
   .carousel {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* ← よりワイドに */
-    height: 600px;     /* ← 高さを追加 */
+    max-width: 1200px; /* よりワイドに */
+    height: 600px;     /* 高さを追加 */
     margin: 0 auto 80px;
     overflow: hidden;
     border-radius: 20px;
@@ -531,8 +544,8 @@ header h1 {
   width: 100%;
   max-width: 800px;
   margin-top: 1rem;
-  border-radius: 8px; /* 任意：角丸にしたい場合 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 任意：少し浮かせたい時 */
+  border-radius: 8px; /* 角丸にしたい */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 少し浮かせたい */
 }
 
   
@@ -728,5 +741,246 @@ header h1 {
     background: #ff6347;
     transform: translateY(-2px);
   }
+
+
+/* =========================
+ Tech / Shader Section
+========================= */
+.tech-section {
+  grid-column: 2 / 12;
+  padding: 2rem;
+  background: linear-gradient(145deg, rgba(20, 20, 30, 0.95), rgba(0, 0, 0, 0.6));
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow:
+          0 0 8px rgba(0, 255, 255, 0.15),
+          0 0 30px rgba(0, 255, 255, 0.05) inset;
+  border-radius: 10px;
+  margin-bottom: var(--spacing);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.tech-card {
+  background: rgba(15, 15, 20, 0.92);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  color: #eee;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 255, 255, 0.22);
+  border-color: rgba(0, 255, 255, 0.45);
+}
+
+.tech-card h3 {
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #0ff;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tech-tags span {
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #00ffff;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  transition: 0.2s;
+}
+
+.tech-tags span:hover {
+  background: rgba(0, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.tech-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* 動画 */
+.tech-video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  margin: 0 0 18px 0;
+  background: #000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* 動画の補足説明 */
+.tech-caption {
+  font-size: 0.85rem;
+  color: #9adbe8;
+  margin-top: -6px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 1100px) {
+  .field {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .project-card.show-right .floating-details,
+  .project-card.show-left .floating-details {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 16px;
+  }
+
+  .project-card:hover .floating-details {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing: 180px;
+  }
+
+  main {
+    display: block;
+    padding: 100px 16px;
+  }
+
+  header,
+  section,
+  #works,
+  .tech-section,
+  .left,
+  blockquote {
+    grid-column: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  header {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .title-section {
+    font-size: 1.6rem;
+  }
+
+  .profile-section h2,
+  .languages-section h3,
+  .profile-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .menu-item {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .carousel {
+    height: 260px;
+  }
+
+  .slide-title {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-info p,
+  .tech-card p,
+  .profile-card p,
+  .icon-card p,
+  .card span {
+    font-size: 0.9rem;
+  }
+
+  .blockquote p,
+  blockquote p {
+    font-size: 1.1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card,
+  .icon-card {
+    width: min(100%, 220px);
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-toggle {
+    font-size: 1.4rem;
+    padding: 8px 14px;
+  }
+
+  .carousel {
+    height: 220px;
+  }
+
+  .tech-card,
+  .project-info,
+  .card,
+  .icon-card {
+    padding: 16px;
+  }
+
+  .tech-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .title-section {
+    font-size: 1.3rem;
+  }
+}
   
 
