@@ -21,8 +21,8 @@
       }
     </style>
     <title>Vite App</title>
-    <script type="module" crossorigin src="/portfolio/assets/index-Bfo2LJiN.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-yRQRTWRf.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-yzfWMOeE.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-qU3so9Rx.css">
   </head>
   <body>
     <div id="app"></div>
@@ -137,7 +137,7 @@
             <div class="icon-card">
               <!-- i class="devicon-ibisPaint-plain"></i-->
                <br>
-              <p>ibisPaint (7Y)</p>
+              <p>ibisPaint (8Y)</p>
             </div>
           </div>
         </div>
@@ -436,19 +436,192 @@
         <p>Creating games that thrill not just players, but also developers.</p>
       </blockquote>
 
+      <section id="tech" class="tech-section">
+        <h2 class="title-section">Tech & Shader Works</h2>
+
+        <div class="tech-grid">
+
+          <!-- Shader -->
+          <div class="tech-card">
+            <h3>Ground Bend Shader</h3>
+            <p class="tech-tags">
+              <span>Unity</span>
+              <span>HLSL</span>
+              <span>Vertex Deformation</span>
+            </p>
+
+            <video
+                    src="GroundBendShader.mp4"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="tech-video">
+            </video>
+
+            <p>
+              「どうぶつの森」のように、地面のみが湾曲し、その上に配置されたオブジェクトは影響を受けない表現に興味を持ち、
+              <strong>空間の見え方を変化させるシェーダの実装</strong>に取り組みました。
+            </p>
+
+            <p>
+              本シェーダでは、<strong>頂点シェーダにおいて地面メッシュのみを変形させる</strong>ことで、
+              実際のジオメトリを変更することなく、曲面状の空間に見える表現を実現しています。
+              また、<strong>パラメータによって湾曲の強さを動的に調整できる</strong>よう設計しています。
+            </p>
+
+            <p>
+              このように、描画処理の段階で空間を変形することで、
+              物理的な構造とは異なる視覚表現を実現し、
+              <strong>プレイヤーの空間認識に影響を与える表現</strong>の可能性を検証しました。
+            </p>
+
+            <p>
+              今後は、この技術を応用し、
+              ステージ構造や視界の制御と組み合わせることで、
+              従来とは異なるゲーム体験の創出に繋げていきたいと考えています。
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>Dynamic Background Shader</h3>
+            <p class="tech-tags">
+              <span>Three.js</span>
+              <span>GLSL</span>
+              <span>Portfolio Visual Design</span>
+            </p>
+            <p>
+              <strong>ポートフォリオを単なる情報提示の場ではなく、
+              一つのインタラクティブな作品として表現したい</strong>と考え、
+              動的に変化する背景シェーダの開発に取り組みました。
+            </p>
+
+            <p>
+              本シェーダでは、<strong>色が滑らかに変化するアニメーションを実装</strong>し、
+              サイバー調の雰囲気を演出しています。
+              また、コンテンツの視認性を保ちながら背景として機能するよう、
+              色の変化やコントラストを調整しています。
+            </p>
+
+            <p>
+              これにより、静的な背景ではなく、
+              サイト全体が常に変化し続ける空間として表現され、
+              <strong>視覚的な没入感を高める</strong>ことを目指しました。
+            </p>
+
+            <p>
+              今後は、ユーザーの操作やスクロールに応じて変化する表現を取り入れることで、
+              より能動的に体験できるビジュアル表現へと発展させていきたいと考えています。
+            </p>
+          </div>
+
+          <div class="tech-card">
+            <h3>Low-Level Game Development with OpenGL</h3>
+            <p class="tech-tags">
+              <span>C++</span>
+              <span>OpenGL</span>
+              <span>GLFW</span>
+              <span>SDL2</span>
+              <span>GLSL</span>
+            </p>
+
+            <video
+                    src="OpenGL_Game.mp4"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="tech-video">
+            </video>
+
+            <p>
+              Unityでの開発経験を重ねていく中で、描画や処理が高度に抽象化されている一方で、
+              その内部挙動を十分に理解・制御できないことに課題を感じました。
+            </p>
+
+            <p>
+              特に、パフォーマンスの最適化や描画パイプラインの挙動を調整する際に、
+              <strong>エンジンの制約に依存してしまう点に限界を感じました</strong>。
+              そこで、レンダリングやメモリ管理を含む処理を自ら実装し、
+              システム全体を理解・制御できる力を身につけることを目的に、
+              C++とOpenGLによるゲーム開発に取り組みました。
+            </p>
+
+            <p>
+              本開発では、レンダリング処理、テクスチャ管理、入力処理、音声再生などの基盤部分を一から実装しました。
+              特に描画面では、座標変換行列の適用、頂点バッファの管理、テクスチャの読み込みと描画、頂点シェーダ・フラグメントシェーダによる描画処理まで含め、
+              <strong>画面に表示されるまでの描画フロー全体を自ら構築</strong>しています。
+            </p>
+
+            <p>
+              これらの経験を通して、ゲームエンジンの内部構造への理解を深めるとともに、
+              <strong>低レイヤーからシステムを設計・実装する力</strong>を養いました。
+            </p>
+
+            <p>
+              今後は、この低レイヤーでの開発経験を基盤として、
+              シェーダによる描画表現の高度化やパフォーマンス最適化に取り組み、
+              より柔軟で制御性の高いゲームシステムの実現を目指していきたいと考えています。
+            </p>
+          </div>
+
+          <!-- AI / Research -->
+          <div class="tech-card">
+            <h3>Self-Built LLM & Dialogue System</h3>
+            <p class="tech-tags">
+              <span>LLM</span>
+              <span>AI</span>
+              <span>Dialogue System</span>
+              <span>Game Interaction</span>
+            </p>
+
+            <video
+                    src="AI_DialogueSystem.mp4"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="tech-video">
+            </video>
+             
+            <p>
+              近年流行している「Deviation Game」や「MIMESIS」等のAIをゲーム内要素として取り込むゲームシステムに興味を持ち、
+              <strong>自作した言語モデルと自然言語で会話できるシステム</strong>を実装しました。
+            </p>
+
+            <p>
+              外部APIに依存せず、<strong>言語モデルの構築や推論処理を自ら実装し</strong>、
+              テキスト生成の仕組みを実践的に理解しながら開発を行いました。
+            </p>
+
+            <p>
+              また、Unity上での対話用インターフェースを組み合わせることで、
+              規定路線が定められた選択式ではなく、<strong>自由な入力による柔軟なコミュニケーション</strong>を実現しています。
+            </p>
+
+            <p>
+              将来的には、NPCがプレイヤーの発言に応じて動的に応答するような、
+              新しいゲーム体験への応用も視野に入れています。
+            </p>
+          </div>
+          
+
+        </div>
+      </section>
+
 
       <section class="left">
         <h2 class = "title-section">Illustrations</h2>
 
         <div class="gallery">
           <div class="gallery-item">
-            <img src="illust1.png" alt="Illust 1">
+            <img src="illust3.png" alt="Illust 1">
           </div>
           <div class="gallery-item">
             <img src="illust2.png" alt="Illust 2">
           </div>
           <div class="gallery-item">
-            <img src="illust3.png" alt="Illust 3">
+            <img src="illust1.png" alt="Illust 3">
           </div>
           <div class="gallery-item">
             <img src="illust4.png" alt="Illust 4">
